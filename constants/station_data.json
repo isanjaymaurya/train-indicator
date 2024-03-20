@@ -1,15 +1,87 @@
 [
     {
-      "name": "Virar",
+        "name": "dahanu road",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "vangoan",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "boisar",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "umroil road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "palghar",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "kelva road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "saphale",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "vaitarana",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+      "name": "virar",
       "isOrigin": true,
       "isDestination": true,
       "isSuperFastTrainStops": true,
       "isFastTrainStops": true,
       "isSlowTrainStops": true,
-      "trainType": [ "western", "season" ]
+      "trainType": [ "western" ]
     },
     {
-      "name": "Nallasopara",
+      "name": "nallasopara",
       "isOrigin": true,
       "isDestination": true,
       "isSuperFastTrainStops": false,
@@ -18,73 +90,241 @@
       "trainType": [ "western" ]
     },
     {
-        "name": "Vasai",
-        "isOrigin": true,
-        "isDestination": true,
-        "isSuperFastTrainStops": true,
-        "isFastTrainStops": true,
-        "isSlowTrainStops": true
-    },
-    {
-        "name": "Naigoan",
-        "isOrigin": false,
-        "isDestination": false,
-        "isSuperFastTrainStops": false,
-        "isFastTrainStops": true,
-        "isSlowTrainStops": true
-    },
-    {
-        "name": "Bhayander",
-        "isOrigin": true,
-        "isDestination": true,
-        "isSuperFastTrainStops": true,
-        "isFastTrainStops": true,
-        "isSlowTrainStops": true
-    },
-    {
-        "name": "Mira Road",
-        "isOrigin": false,
-        "isDestination": false,
-        "isSuperFastTrainStops": false,
-        "isFastTrainStops": true,
-        "isSlowTrainStops": true
-    },
-    {
-        "name": "Dahisar",
-        "isOrigin": false,
-        "isDestination": false,
-        "isSuperFastTrainStops": false,
-        "isFastTrainStops": true,
-        "isSlowTrainStops": true
-    },
-    {
-        "name": "Boriwali",
+        "name": "vasai",
         "isOrigin": true,
         "isDestination": true,
         "isSuperFastTrainStops": true,
         "isFastTrainStops": true,
         "isSlowTrainStops": true,
-        "trainType": [ "western", "season" ]
+        "trainType": [ "western" ]
     },
     {
-        "name": "Kandiwali",
+        "name": "naigoan",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "bhayander",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "mira road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "dahisar",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "boriwali",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "kandiwali",
         "isOrigin": false,
         "isDestination": false,
         "isSuperFastTrainStops": false,
         "isFastTrainStops": false,
-        "isSlowTrainStops": true
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
     },
     {
-        "name": "Dadar",
+        "name": "malad",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "goregoan",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "harbour", "western" ]
+    },
+    {
+        "name": "ram mandir",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "jogeshwari",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "andheri",
         "isOrigin": true,
         "isDestination": true,
         "isSuperFastTrainStops": true,
         "isFastTrainStops": true,
         "isSlowTrainStops": true,
-        "trainType": [  "central", "season", "western" ]
+        "trainType": [ "western" ]
     },
     {
-      "name": "Charchagate",
+        "name": "vile parle",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "santa cruz",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "khar road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "bandra",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "mahin jn",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "matunga road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "dadar",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [  "central", "western" ]
+    },
+    {
+        "name": "prabhadevi",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "lower parel",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "mahalakhsmi",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "mumbai central",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "grant road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "churni road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+        "name": "marine lines",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western" ]
+    },
+    {
+      "name": "churchagate",
       "isOrigin": true,
       "isDestination": true,
       "isSuperFastTrainStops": true,
