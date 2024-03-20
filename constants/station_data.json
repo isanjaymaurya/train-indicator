@@ -1,0 +1,96 @@
+[
+    {
+      "name": "Virar",
+      "isOrigin": true,
+      "isDestination": true,
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": [ "western", "season" ]
+    },
+    {
+      "name": "Nallasopara",
+      "isOrigin": true,
+      "isDestination": true,
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": [ "western" ]
+    },
+    {
+        "name": "Vasai",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true
+    },
+    {
+        "name": "Naigoan",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true
+    },
+    {
+        "name": "Bhayander",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true
+    },
+    {
+        "name": "Mira Road",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true
+    },
+    {
+        "name": "Dahisar",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true
+    },
+    {
+        "name": "Boriwali",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [ "western", "season" ]
+    },
+    {
+        "name": "Kandiwali",
+        "isOrigin": false,
+        "isDestination": false,
+        "isSuperFastTrainStops": false,
+        "isFastTrainStops": false,
+        "isSlowTrainStops": true
+    },
+    {
+        "name": "Dadar",
+        "isOrigin": true,
+        "isDestination": true,
+        "isSuperFastTrainStops": true,
+        "isFastTrainStops": true,
+        "isSlowTrainStops": true,
+        "trainType": [  "central", "season", "western" ]
+    },
+    {
+      "name": "Charchagate",
+      "isOrigin": true,
+      "isDestination": true,
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": [  "central" ]
+    }
+  ]
+  
