@@ -1,21 +1,14 @@
-# train_indicator
+## Info
 
-A new Flutter project.
+App Name: Train Indicator
 
-## Getting Started
+Web: `https://isanjaymaurya.github.io/train-indicator/static-pages/home.html`
 
-This project is a starting point for a Flutter application.
+Privacy Policy: `https://isanjaymaurya.github.io/train-indicator/static-pages/privacy.html`
 
-A few resources to get you started if this is your first Flutter project:
+Short Desc: Access offline Mumbai train timetable for routes, platforms, and door positions.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Desc:
+    Mumbai Local Train Timetable
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-## Static Pages 
-
-Privacy Policy - `https://isanjaymaurya.github.io/train-indicator/static-pages/privacy.html`
+    For the Mumbai local train timetable, you can access the Maharashtra Railway offline timetable. This includes information on the Central, Western, and Harbour lines, as well as services like the Virar-Dahanu Shuttle, Diva-Roha, and Neral-Matheran. Additionally, the timetable provides details on platform numbers and door positions.
