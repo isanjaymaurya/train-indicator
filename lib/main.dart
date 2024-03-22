@@ -1,4 +1,340 @@
 import 'package:flutter/material.dart';
+import 'utils.dart';
+
+// Define data models
+class Station {
+  final String name;
+  final bool isSuperFastTrainStops;
+  final bool isFastTrainStops;
+  final bool isSlowTrainStops;
+  final bool isSourceOrDestStation;
+  final List<String> trainType;
+
+  Station({
+    required this.name,
+    required this.isSuperFastTrainStops,
+    required this.isFastTrainStops,
+    required this.isSlowTrainStops,
+    required this.isSourceOrDestStation,
+    required this.trainType,
+  });
+}
+
+// Fetch data from demo API
+Future<List<Station>> fetchStations() async {
+  // Simulate fetching data from API
+  // Replace this with actual API call
+  List<Map<String, Object>> jsonData = [
+    {
+      "name": "dahanu road",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": true
+    },
+    {
+      "name": "vangoan",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "boisar",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "umroil road",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "palghar",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "kelva road",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "saphale",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "vaitarana",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "virar",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": true
+    },
+    {
+      "name": "nallasopara",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "vasai",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "naigoan",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "bhayander",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "mira road",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "dahisar",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "boriwali",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": true
+    },
+    {
+      "name": "kandiwali",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "malad",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "goregoan",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["harbour", "western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "ram mandir",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "jogeshwari",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "andheri",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "vile parle",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "santa cruz",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "khar road",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "bandra",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "mahin jn",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "matunga road",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "dadar",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["central", "western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "prabhadevi",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "lower parel",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "mahalakhsmi",
+      "isSuperFastTrainStops": false,
+      "isFastTrainStops": false,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "mumbai central",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "grant road",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "churni road",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "marine lines",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["western"],
+      "isSourceOrDestStation": false
+    },
+    {
+      "name": "churchagate",
+      "isSuperFastTrainStops": true,
+      "isFastTrainStops": true,
+      "isSlowTrainStops": true,
+      "trainType": ["central"],
+      "isSourceOrDestStation": true
+    }
+  ];
+
+  return jsonData
+      .map((json) => Station(
+          name: json['name'] as String,
+          isSuperFastTrainStops: json['isSuperFastTrainStops'] as bool,
+          isFastTrainStops: json['isFastTrainStops'] as bool,
+          isSlowTrainStops: json['isSlowTrainStops'] as bool,
+          trainType: (json['trainType'] as List<dynamic>)
+              .map((e) => e.toString())
+              .toList(),
+          isSourceOrDestStation: json['isSourceOrDestStation'] as bool))
+      .toList();
+}
 
 void main() {
   runApp(const MyApp());
@@ -7,119 +343,95 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Train Indicator',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primaryColor: const Color(0xFFD40606), // Primary color
+        secondaryHeaderColor: const Color(0xFF0E3D84), // Secondary color
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Train Stations'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  late List<Station> stations = [];
+  late List<Station> displayedStations = [];
+  final List trainTypes = ['western', 'central', 'harbour'];
+  String searchString = '';
+  String selectedTrainType = '';
 
-  void _incrementCounter() {
+  @override
+  void initState() {
+    super.initState();
+    fetchStations().then((value) {
+      setState(() {
+        stations = value;
+        displayedStations = stations;
+      });
+    });
+  }
+
+  void _filterStations(String query) {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      displayedStations = stations
+          .where((station) =>
+              station.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+      searchString = query;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        primary: true,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'hello world',
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              onChanged: _filterStations,
+              decoration: const InputDecoration(
+                hintText: 'You are at?',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: displayedStations.isNotEmpty
+                ? ListView.builder(
+                    itemCount: displayedStations.length,
+                    itemBuilder: (context, index) {
+                      final station = displayedStations[index];
+                      // Determine train type based on isSlowTrainStops
+                      String trainType =
+                          station.isFastTrainStops ? 'Fast' : 'Slow';
+                      return ListTile(
+                          title: Text(capitalizeEachWord(station.name)),
+                          subtitle: Text('Train Type: $trainType'),
+                          dense: true);
+                    },
+                  )
+                : Center(child: Text('No station found $searchString')),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
