@@ -174,7 +174,7 @@ Future<List<Station>> fetchStations() async {
       "isSuperFastTrainStops": false,
       "isFastTrainStops": false,
       "isSlowTrainStops": true,
-      "trainType": ["harbour", "western"],
+      "trainType": ["western", "harbour"],
       "isSourceOrDestStation": false
     },
     {
@@ -397,6 +397,19 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Color getColor(String type) {
+    switch (type) {
+      case 'western':
+        return Colors.blue;
+      case 'central':
+        return Colors.green;
+      case 'harbour':
+        return Colors.orange;
+      default:
+        return Colors.grey;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -428,8 +441,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       String trainType =
                           station.isFastTrainStops ? 'Fast' : 'Slow';
                       return ListTile(
+                          leading: const Icon(Icons.train_sharp),
                           title: Text(capitalizeEachWord(station.name)),
                           subtitle: Text('Train Type: $trainType'),
+                          trailing: Text(station.trainType
+                              .map((type) => type.substring(0, 1).toUpperCase())
+                              .join(', ')),
                           dense: true,
                           // Inside the ListView.builder, update the onTap callback
                           onTap: () {
