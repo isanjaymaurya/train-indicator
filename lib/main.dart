@@ -369,8 +369,12 @@ class _MyHomePageState extends State<MyHomePage> {
   late List<Station> stations = [];
   late List<Station> displayedStations = [];
   final List trainTypes = ['western', 'central', 'harbour'];
+
   String searchString = '';
   String selectedTrainType = '';
+
+  // Add ScrollController instances
+  ScrollController controller1 = ScrollController();
 
   @override
   void initState() {
@@ -416,6 +420,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: displayedStations.isNotEmpty
                 ? ListView.builder(
+                    controller: controller1,
                     itemCount: displayedStations.length,
                     itemBuilder: (context, index) {
                       final station = displayedStations[index];
@@ -425,8 +430,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       return ListTile(
                           title: Text(capitalizeEachWord(station.name)),
                           subtitle: Text('Train Type: $trainType'),
-                          dense: true);
+                          dense: true,
+                          // Inside the ListView.builder, update the onTap callback
+                          onTap: () {
+                            final contentSize =
+                                controller1.position.viewportDimension +
+                                    controller1.position.maxScrollExtent;
+                            final target =
+                                contentSize * index / displayedStations.length;
+
+                            controller1.position.animateTo(
+                              target,
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeInOut,
+                            );
+                          });
                     },
+                    // ScrollController: controller1
                   )
                 : Center(child: Text('No station found $searchString')),
           ),
