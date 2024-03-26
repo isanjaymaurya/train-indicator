@@ -24,13 +24,12 @@ CMD - `flutter build apk --debug`
 Folder - build\app\outputs\flutter-apk\app-release 
 `flutter build apk --release`
 
-
-# Install
+# CMD
 
 Install - `flutter install`
 
-
-# Run
-
 Run -  `flutter run`
 
+Release - `flutter build appbundle --release`
+
+Realease Build Folder - `build\app\outputs\bundle\release\app-release.aab`
