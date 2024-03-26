@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:train_indicator/layouts/main_layout.dart';
 import 'package:train_indicator/pages/station_details_page.dart';
 import '../utils.dart';
 
@@ -411,11 +412,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        primary: true,
-      ),
+    return MainLayout(
+      title: widget.title,
       body: Column(
         children: [
           Padding(
