@@ -12,3 +12,25 @@ Desc:
     Mumbai Local Train Timetable
 
     For the Mumbai local train timetable, you can access the Maharashtra Railway offline timetable. This includes information on the Central, Western, and Harbour lines, as well as services like the Virar-Dahanu Shuttle, Diva-Roha, and Neral-Matheran. Additionally, the timetable provides details on platform numbers and door positions.
+
+
+# Debug
+Folder - build\app\outputs\flutter-apk\app-debug 
+CMD - `flutter build apk --debug`
+
+
+# Build
+
+Folder - build\app\outputs\flutter-apk\app-release 
+`flutter build apk --release`
+
+
+# Install
+
+Install - `flutter install`
+
+
+# Run
+
+Run -  `flutter run`
+

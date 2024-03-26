@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:train_indicator/pages/station_details_page.dart';
 import '../utils.dart';
 
 // Define data models
@@ -351,10 +352,10 @@ class HomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   late List<Station> stations = [];
   late List<Station> displayedStations = [];
   late List<Map<String, String>> routeType = [
@@ -458,6 +459,16 @@ class _MyHomePageState extends State<HomePage> {
                               target,
                               duration: const Duration(milliseconds: 500),
                               curve: Curves.easeInOut,
+                            );
+
+                            // redirect to station details page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => StationDetailsPage(
+                                  title: capitalizeEachWord(station.name),
+                                ),
+                              ),
                             );
                           });
                     },
