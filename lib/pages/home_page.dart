@@ -436,6 +436,7 @@ class _HomePageState extends State<HomePage> {
                     itemCount: displayedStations.length,
                     itemBuilder: (context, index) {
                       final station = displayedStations[index];
+
                       // Determine train type based on isSlowTrainStops
                       String trainType =
                           station.isFastTrainStops ? 'Fast' : 'Slow';
@@ -443,12 +444,20 @@ class _HomePageState extends State<HomePage> {
                           leading: const Icon(Icons.train_sharp),
                           title: Text(capitalizeEachWord(station.name)),
                           subtitle: Text('Train Type: $trainType'),
-                          trailing: Text(station.trainType
-                              .map((type) => type.substring(0, 1).toUpperCase())
-                              .join(', ')),
+                          trailing: Text(
+                            station.trainType.isNotEmpty
+                                ? station.trainType
+                                    .map((type) => type.isNotEmpty
+                                        ? type.substring(0, 1).toUpperCase()
+                                        : '')
+                                    .where((substring) => substring.isNotEmpty)
+                                    .join(', ')
+                                : 'N/A',
+                          ),
                           dense: true,
                           // Inside the ListView.builder, update the onTap callback
                           onTap: () {
+                            // scroll to up
                             final contentSize =
                                 controller1.position.viewportDimension +
                                     controller1.position.maxScrollExtent;
