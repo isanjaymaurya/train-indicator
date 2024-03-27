@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'pages/home_page.dart';
+import 'pages/city_map_page.dart';
 import 'pages/station_details_page.dart';
 
 void main() {
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/": (context) => const HomePage(title: 'Train Indicator'),
           '/stationDetails': (context) => const StationDetailsPage(title: ""),
+          '/cityMap': (context) => const CityMapPage(title: ""),
         });
   }
 }

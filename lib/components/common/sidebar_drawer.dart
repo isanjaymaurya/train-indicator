@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:train_indicator/pages/city_map_page.dart';
+
 class SidebarDrawer extends StatelessWidget {
   const SidebarDrawer({super.key});
 
@@ -9,25 +11,33 @@ class SidebarDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const DrawerHeader(
-            child: Text('Drawer Header'),
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-          ),
+          // const DrawerHeader(
+          //   decoration: BoxDecoration(
+          //     color: Colors.blue,
+          //   ),
+          //   child: Text('Drawer Header'),
+          // ),
           ListTile(
-            title: const Text('Item 1'),
+            leading: const Icon(Icons.system_update),
+            title: const Text('Update Timetable'),
             onTap: () {
               // Handle item 1 tap
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
+            leading: const Icon(Icons.map),
+            title: const Text('View Map'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CityMapPage(
+                    title: 'View Map',
+                  ),
+                ),
+              );
             },
           ),
-          // Add more list tiles for additional items
         ],
       ),
     );

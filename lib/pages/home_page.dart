@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:train_indicator/layouts/main_layout.dart';
 import 'package:train_indicator/pages/station_details_page.dart';
 import '../utils.dart';
@@ -453,7 +454,6 @@ class _HomePageState extends State<HomePage> {
                                 : 'N/A',
                           ),
                           dense: true,
-                          // Inside the ListView.builder, update the onTap callback
                           onTap: () {
                             // scroll to up
                             final contentSize =
